@@ -1,6 +1,7 @@
 
 #### Imports ###################################################################
 
+from typing import Sequence
 from module.dir_create import dir_create
 import requests
 import json
@@ -33,6 +34,13 @@ res = requests.post(
 # parse json
 json_parsed = json.loads(res.content)
 logs        = json_parsed["data"]['log']
+
+# transform date to ISO
+for i,x in enumerate(logs):
+  logs[i][0] = '20' + logs[i][0][6:8] + '-' + logs[i][0][3:5] + '-' + logs[i][0][0:2]
+
+
+
 
 # prepare logs
 logs_list  = [dict(date = x[0], time = x[1], text = x[2], syslog_type = x[3], number = x[4]) for x in logs ]
