@@ -55,7 +55,7 @@ with open( path + timestamp("%Y-%m-%d_%H%M%S") + "_logs.jsonl", mode = "w") as f
 
 
 # insert into database
-write_event_logs_to_db(logs = logs_list, path = "~/logs/connection_logs_db/logs.db")
+write_event_logs_to_db(logs = logs, path = "~/logs/connection_logs_db/logs.db")
 
 
 

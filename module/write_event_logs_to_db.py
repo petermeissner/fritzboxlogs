@@ -3,7 +3,7 @@ import sqlite3
 from typing import List
 
 
-def write_event_logs_to_db(logs: List[List[str, str, str, str, str]], path: str) -> None:
+def write_event_logs_to_db(logs: List[List], path: str) -> None:
 
   # prepare path
   path = os.path.expanduser(path)
